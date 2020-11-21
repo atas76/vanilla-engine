@@ -16,9 +16,10 @@ public class EnvironmentTest {
         environment = new Environment();
         environment.load("src/test/resources/sample.csv");
 
-        assertEquals(143, environment.getMatchesNumber());
-        assertEquals(1, environment.getMatch(73).getAwayTeamScore());
-        assertEquals(0, environment.getMatch(54).getHomeTeamScore());
-        assertEquals(17, environment.getMatch(108).getAwayTeamPosition());
+        assertEquals(55, environment.getMatchesNumber());
+        assertEquals(0, environment.getMatch(49).getAwayTeamScore());
+        assertEquals(1, environment.getMatch(17).getHomeTeamScore());
+        assertEquals(1806, environment.getMatch(28).getAwayTeamRating());
+        assertEquals(1823, environment.getMatch(28).getHomeTeamRating());
     }
 }

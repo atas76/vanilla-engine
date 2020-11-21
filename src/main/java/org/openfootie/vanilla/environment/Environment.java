@@ -21,8 +21,8 @@ public class Environment {
 
         for (CSVRecord record : matchRecords) {
             matches.add(new MatchSample(
-                    Integer.parseInt(record.get("HomePosition")),
-                    Integer.parseInt(record.get("AwayPosition")),
+                    Integer.parseInt(record.get("HomeRating")),
+                    Integer.parseInt(record.get("AwayRating")),
                     Integer.parseInt(record.get("HomeScore")),
                     Integer.parseInt(record.get("AwayScore"))));
         }

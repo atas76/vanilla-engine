@@ -2,24 +2,24 @@ package org.openfootie.vanilla.domain;
 
 public class MatchSample {
 
-    private int homeTeamPosition;
-    private int awayTeamPosition;
+    private int homeTeamRating;
+    private int awayTeamRating;
     private int homeTeamScore;
     private int awayTeamScore;
 
     public MatchSample(int homeTeamPosition, int awayTeamPosition, int homeTeamScore, int awayTeamScore) {
-        this.homeTeamPosition = homeTeamPosition;
-        this.awayTeamPosition = awayTeamPosition;
+        this.homeTeamRating = homeTeamPosition;
+        this.awayTeamRating = awayTeamPosition;
         this.homeTeamScore = homeTeamScore;
         this.awayTeamScore = awayTeamScore;
     }
 
-    public int getHomeTeamPosition() {
-        return this.homeTeamPosition;
+    public int getHomeTeamRating() {
+        return this.homeTeamRating;
     }
 
-    public int getAwayTeamPosition() {
-        return this.awayTeamPosition;
+    public int getAwayTeamRating() {
+        return this.awayTeamRating;
     }
 
     public int getHomeTeamScore() {
