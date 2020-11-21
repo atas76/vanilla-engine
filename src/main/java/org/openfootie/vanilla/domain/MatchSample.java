@@ -7,9 +7,9 @@ public class MatchSample {
     private int homeTeamScore;
     private int awayTeamScore;
 
-    public MatchSample(int homeTeamPosition, int awayTeamPosition, int homeTeamScore, int awayTeamScore) {
-        this.homeTeamRating = homeTeamPosition;
-        this.awayTeamRating = awayTeamPosition;
+    public MatchSample(int homeTeamRating, int awayTeamRating, int homeTeamScore, int awayTeamScore) {
+        this.homeTeamRating = homeTeamRating;
+        this.awayTeamRating = awayTeamRating;
         this.homeTeamScore = homeTeamScore;
         this.awayTeamScore = awayTeamScore;
     }
