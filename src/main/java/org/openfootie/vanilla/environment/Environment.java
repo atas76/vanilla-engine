@@ -22,8 +22,13 @@ public class Environment {
         return teams.get(teamName);
     }
 
-    public void loadTeams(String resourceName) {
-        // TODO
+    public void loadTeams(String resource) throws IOException {
+        Reader rankingReader = new FileReader(resource);
+        Iterable<CSVRecord> records = CSVFormat.DEFAULT.parse(rankingReader);
+        for (CSVRecord record : records) {
+            String teamName = record.get(0);
+            teams.put(teamName, new Team(teamName, Integer.parseInt(record.get(1))));
+        }
     }
 
     public void loadMatchSamples(String resourceName) throws IOException {
