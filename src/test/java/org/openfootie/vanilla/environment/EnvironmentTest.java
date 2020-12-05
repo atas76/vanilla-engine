@@ -11,6 +11,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.openfootie.vanilla.domain.MatchStatus.COMPLETED;
+import static org.openfootie.vanilla.domain.MatchStatus.FIXTURE;
 
 public class EnvironmentTest {
 
@@ -55,6 +58,19 @@ public class EnvironmentTest {
                 new MatchSample(1851,1546,3,2)
         );
 
-        ScoreGenerator scoreGenerator = new ScoreGenerator(match, seedSamples);
+        assertEquals(FIXTURE, match.getStatus());
+
+        ScoreGenerator scoreGenerator = new ScoreGenerator(seedSamples);
+        scoreGenerator.generate(match);
+
+        // System.out.println(match);
+
+        assertEquals(COMPLETED, match.getStatus());
+
+        assertTrue(match.getHomeScore() >= 1);
+        assertTrue(match.getHomeScore() <= 2);
+
+        assertTrue(match.getAwayScore() >= 3);
+        assertTrue(match.getAwayScore() <= 4);
     }
 }
