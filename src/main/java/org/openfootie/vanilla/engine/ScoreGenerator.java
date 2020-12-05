@@ -11,9 +11,19 @@ import java.util.stream.Stream;
 public class ScoreGenerator {
 
     private List<MatchSample> seedSamples;
+    private double xScoreHome;
+    private double xScoreAway;
 
     public ScoreGenerator(List<MatchSample> seedSamples) {
         this.seedSamples = seedSamples;
+    }
+
+    public double getExpScoreHome() {
+        return xScoreHome;
+    }
+
+    public double getExpScoreAway() {
+        return xScoreAway;
     }
 
     private double calculateSampleAverage(Stream<Integer> stream) {
@@ -33,8 +43,8 @@ public class ScoreGenerator {
         double homeRelativeEloFactor = match.getHomeTeam().getEloRanking() / homeRatingSampleAverage;
         double awayRelativeEloFactor = match.getAwayTeam().getEloRanking() / awayRatingSampleAverage;
 
-        double xScoreHome = homeRelativeEloFactor * homeScoreSampleAverage;
-        double xScoreAway = awayRelativeEloFactor * awayScoreSampleAverage;
+        this.xScoreHome = homeRelativeEloFactor * homeScoreSampleAverage;
+        this.xScoreAway = awayRelativeEloFactor * awayScoreSampleAverage;
 
         BigDecimal xScoreHomeBD = new BigDecimal(xScoreHome);
         BigDecimal xScoreAwayBD = new BigDecimal(xScoreAway);

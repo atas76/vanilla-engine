@@ -65,6 +65,9 @@ public class EnvironmentTest {
 
         // System.out.println(match);
 
+        assertEquals(1.08, scoreGenerator.getExpScoreHome(), 0.1);
+        assertEquals(3.08, scoreGenerator.getExpScoreAway(), 0.1);
+
         assertEquals(COMPLETED, match.getStatus());
 
         assertTrue(match.getHomeScore() >= 1);
