@@ -22,6 +22,14 @@ public class Environment {
         return teams.get(teamName);
     }
 
+    public ArrayList<String> getTeamNames() {
+        return new ArrayList<>(this.teams.keySet());
+    }
+
+    public List<MatchSample> getMatchSample() {
+        return matches;
+    }
+
     public void loadTeams(String resource) throws IOException {
         Reader rankingReader = new FileReader(resource);
         Iterable<CSVRecord> records = CSVFormat.DEFAULT.parse(rankingReader);

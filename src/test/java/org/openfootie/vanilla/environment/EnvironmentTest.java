@@ -23,7 +23,7 @@ public class EnvironmentTest {
     public void testLoad() throws IOException {
 
         environment = new Environment();
-        environment.loadMatchSamples("src/test/resources/sample.csv");
+        environment.loadMatchSamples("src/test/resources/sample_scores.csv");
 
         assertEquals(55, environment.getMatchesNumber());
         assertEquals(0, environment.getMatch(49).getAwayTeamScore());
@@ -47,7 +47,7 @@ public class EnvironmentTest {
     public void testExpectedScore() throws IOException {
 
         environment = new Environment();
-        environment.loadMatchSamples("src/test/resources/sample.csv");
+        environment.loadMatchSamples("src/test/resources/sample_scores.csv");
 
         environment.loadTeams("src/test/resources/teams.csv");
 
