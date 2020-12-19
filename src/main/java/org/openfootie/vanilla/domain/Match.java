@@ -1,5 +1,7 @@
 package org.openfootie.vanilla.domain;
 
+import org.openfootie.vanilla.engine.ScoreGenerator;
+
 import static org.openfootie.vanilla.domain.MatchStatus.*;
 
 public class Match {
@@ -44,5 +46,9 @@ public class Match {
 
     public Team getAwayTeam() {
         return awayTeam;
+    }
+
+    public void play(ScoreGenerator scoreGenerator) {
+        scoreGenerator.generate(this);
     }
 }
