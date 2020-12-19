@@ -23,10 +23,10 @@ public class Main {
         environment.loadTeams("src/main/resources/teams.csv");
         environment.loadMatchSamples("src/main/resources/sample_scores.csv");
 
-        playFriendly();
+        playRandomFriendly();
     }
 
-    private static void playFriendly() {
+    private static void playRandomFriendly() {
         FriendlyMatchGenerator friendlyMatchGenerator = new FriendlyMatchGenerator(environment);
         Match match = friendlyMatchGenerator.generate();
 
