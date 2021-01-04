@@ -48,7 +48,6 @@ public class Main {
             match.play(scoreGenerator);
             System.out.println(match);
         }
-
     }
 
     private static void playRandomFriendly() {
