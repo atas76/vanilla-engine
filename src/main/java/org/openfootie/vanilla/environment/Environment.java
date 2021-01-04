@@ -8,10 +8,7 @@ import org.openfootie.vanilla.domain.Team;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Environment {
 
@@ -20,6 +17,10 @@ public class Environment {
 
     public Team getTeam(String teamName) {
         return teams.get(teamName);
+    }
+
+    public List<Team> getTeams() {
+        return new ArrayList<>(teams.values());
     }
 
     public ArrayList<String> getTeamNames() {
