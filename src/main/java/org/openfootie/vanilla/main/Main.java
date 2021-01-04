@@ -23,21 +23,57 @@ public class Main {
         environment.loadTeams("src/main/resources/teams.csv");
         environment.loadMatchSamples("src/main/resources/sample_scores.csv");
 
-        playRandomFriendly();
+        playRandomFriendlies(5, 5);
+    }
+
+    private static void playRandomFriendlies(int friendliesNum) {
+        for (int i = 0; i < friendliesNum; i++) {
+            playRandomFriendly();
+        }
+    }
+
+    private static void playRandomFriendlies(int friendliesNum, int repeat) {
+        for (int i = 0; i < friendliesNum; i++) {
+            playRandomFriendly(repeat);
+            System.out.println();
+        }
+    }
+
+    private static void playRandomFriendly(int repeat) {
+
+        Match match = generateFriendlyMatch();
+
+        for (int i = 0; i < repeat; i++) {
+            ScoreGenerator scoreGenerator = setupMatchData();
+            match.play(scoreGenerator);
+            System.out.println(match);
+        }
+
     }
 
     private static void playRandomFriendly() {
-        FriendlyMatchGenerator friendlyMatchGenerator = new FriendlyMatchGenerator(environment);
-        Match match = friendlyMatchGenerator.generate();
 
+        Match match = generateFriendlyMatch();
+
+        ScoreGenerator scoreGenerator = setupMatchData();
+        match.play(scoreGenerator);
+        System.out.println(match);
+    }
+
+    private static ScoreGenerator setupMatchData() {
+        List<MatchSample> seed = seedMatchSamples();
+        return new ScoreGenerator(seed);
+    }
+
+    private static List<MatchSample> seedMatchSamples() {
         List<MatchSample> seed = new ArrayList<>();
         for (int i = 0; i < SEED_SIZE; i++) {
             seed.add(environment.getMatchSample().get(rnd.nextInt(environment.getMatchSample().size())));
         }
+        return seed;
+    }
 
-        ScoreGenerator scoreGenerator = new ScoreGenerator(seed);
-        match.play(scoreGenerator);
-
-        System.out.println(match);
+    private static Match generateFriendlyMatch() {
+        return new FriendlyMatchGenerator(environment).generate();
     }
 }
