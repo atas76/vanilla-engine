@@ -19,7 +19,8 @@ public class Match {
 
     @Override
     public String toString() {
-        return homeTeam.getName() + " - " + awayTeam.getName() + " " + homeScore + " - " + awayScore;
+        String score = status == FIXTURE ? "" : " " + homeScore + " - " + awayScore;
+        return homeTeam.getName() + " - " + awayTeam.getName() + score;
     }
 
     public void setFinalScore(int homeScore, int awayScore) {
