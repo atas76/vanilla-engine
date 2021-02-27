@@ -3,7 +3,7 @@ package org.openfootie.vanilla;
 import org.junit.Test;
 import org.openfootie.vanilla.domain.Tournament;
 import org.openfootie.vanilla.environment.Environment;
-import org.openfootie.vanilla.main.TournamentGenerator;
+import org.openfootie.vanilla.scoresim.TournamentGenerator;
 
 import java.io.IOException;
 

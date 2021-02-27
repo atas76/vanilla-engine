@@ -1,4 +1,4 @@
-package org.openfootie.vanilla.main;
+package org.openfootie.vanilla.scoresim;
 
 import org.openfootie.vanilla.domain.Match;
 import org.openfootie.vanilla.domain.MatchSample;
