@@ -2,7 +2,6 @@ package org.openfootie.vanilla.scoresim;
 
 import org.openfootie.vanilla.domain.Match;
 import org.openfootie.vanilla.domain.MatchSample;
-import org.openfootie.vanilla.engine.ScoreGenerator;
 import org.openfootie.vanilla.environment.Environment;
 
 import java.io.IOException;

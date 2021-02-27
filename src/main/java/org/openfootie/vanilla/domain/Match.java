@@ -1,6 +1,6 @@
 package org.openfootie.vanilla.domain;
 
-import org.openfootie.vanilla.engine.ScoreGenerator;
+import org.openfootie.vanilla.scoresim.ScoreGenerator;
 
 import static org.openfootie.vanilla.domain.MatchStatus.*;
 

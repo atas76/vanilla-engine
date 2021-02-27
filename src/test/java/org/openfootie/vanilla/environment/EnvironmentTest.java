@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.openfootie.vanilla.domain.Match;
 import org.openfootie.vanilla.domain.MatchSample;
 import org.openfootie.vanilla.domain.Team;
-import org.openfootie.vanilla.engine.ScoreGenerator;
+import org.openfootie.vanilla.scoresim.ScoreGenerator;
 
 import java.io.IOException;
 import java.util.Arrays;
